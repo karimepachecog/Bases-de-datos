@@ -1,6 +1,6 @@
 # Bases-de-datos
 _Cómo cargar y consultar información en bases de datos_ :smiley_cat:
-<details id=1>
+<details>
 <summary><h2>Cómo crear un blob de almacenamiento</h2></summary>
   <h3> Crear una cuenta de almacenamiento</h3>
   <ol>
@@ -81,7 +81,7 @@ _Cómo cargar y consultar información en bases de datos_ :smiley_cat:
   </ol>
   </details>
  
- <details id=2>
+ <details>
   <summary><h2>Consultar datos con Kutso</h2></summary>
 <h2 id="connect-to-the-data">Conexión a los datos</h2>
 <p>Usará la interfaz web de Azure Data Explorer para conectarse a los datos. Pero también puede usar el Lenguaje de consulta Kusto mismo en Log Analytics, Azure Sentinel y otros servicios. Solo tendrá que conectarse una vez y seguirá usando esta conexión de datos para todas las consultas de las unidades siguientes.</p>
