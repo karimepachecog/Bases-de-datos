@@ -85,3 +85,4 @@ _Cómo cargar y consultar información en bases de datos_ :smiley_cat:
   <summary><h2>Consultar datos con Query</h2></summary>
   
   _SQL_
+ </details>
