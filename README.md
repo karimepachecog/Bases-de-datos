@@ -57,19 +57,14 @@ _Cómo cargar y consultar información en bases de datos_ :smiley_cat:
     <li>Seleccione el contenedor creado y seleccione cargar</li>
     <li>Seleccione el blob (archivo) que acaba de cargar. Debe estar en la pestaña de propiedades.</li>
     <li>Copie la dirección URL del campo URL y péguela en una nueva pestaña. Debe recibir un mensaje de error similar al siguiente:
-    <pre tabindex="0" class="has-inner-focus"><code data-author-content="<Error>
-  <Code>ResourceNotFound</Code>
-  <Message>The specified resource does not exist. RequestId:4a4bd3d9-101e-005a-1a3e-84bd42000000 Time:2022-06-20T00:41:31.2482656Z</Message>
-</Error>
-
-">&lt;Error&gt;
+ <pre><code>&lt;Error&gt;
   &lt;Code&gt;ResourceNotFound&lt;/Code&gt;
   &lt;Message&gt;The specified resource does not exist. RequestId:4a4bd3d9-101e-005a-1a3e-84bd42000000 Time:2022-06-20T00:41:31.2482656Z&lt;/Message&gt;
 &lt;/Error&gt;
 
 </code></pre>
-      </li>
-  </ol>
+</li>
+</ol>
   
   <h3>Cambie el nivel de acceso del blob</h3>
   <ol>
