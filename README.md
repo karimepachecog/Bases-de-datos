@@ -79,6 +79,8 @@ _Cómo cargar y consultar información en bases de datos_ :smiley_cat:
  
  <details>
   <summary><h2>Consultar datos con Kutso</h2></summary>
+  <i>Kutso nos permite realizar solicitudes de lectura para consultar datos.
+  <p>Podemos utilizar los blobs como fuentes de datos para ingerir en un cluster o crear una tabla cargando datos directamente, se ordenan en columnas de acuerdo al tipo de datos y posteriormente se pueden realizar consultas sobre estor datos. En esta ocasión, tomaremos ejemplos de tablas ya creadas.</p></i>
 <h2 id="connect-to-the-data">Conexión a los datos</h2>
 <p>Usará la interfaz web de Azure Data Explorer para conectarse a los datos. Pero también puede usar el Lenguaje de consulta Kusto mismo en Log Analytics, Azure Sentinel y otros servicios. Solo tendrá que conectarse una vez y seguirá usando esta conexión de datos para todas las consultas de las unidades siguientes.</p>
 <ol>
@@ -103,10 +105,45 @@ _Cómo cargar y consultar información en bases de datos_ :smiley_cat:
 </li>
 </ol>
 <p>Ya está listo para ejecutar consultas en la tabla <em>StormEvents</em>. </p>
-
+  <h2>Operadores</h2>
+  <h4><code>Take</code></h4>
+  <p>Devuelve un número específico de filas arbitrarias.</p>
+  Puede ejecutar la siguiente consulta:
+  <pre tabindex="0" class="has-inner-focus"><code class="lang-kusto" data-author-content="StormEvents
+| take 5
+"><span>StormEvents
+| <span class="hljs-title">take</span> <span class="hljs-number">5</span>
+</span></code></pre>
+  <h4><code>Project:</code></h4>
+  <p>Devuelve sólo las columnas que se seleccionen.</p>
+  <pre tabindex="0" class="has-inner-focus"><code class="lang-kusto" data-author-content="StormEvents
+| project EventType, State, DamageProperty, DamageCrops, InjuriesDirect, InjuriesIndirect
+| take 10
+"><span>StormEvents
+| <span class="hljs-title">project</span> EventType, State, DamageProperty, DamageCrops, InjuriesDirect, InjuriesIndirect
+| <span class="hljs-title">take</span> <span class="hljs-number">10</span>
+</span></code></pre>
+  <p>Puede definir nuevas columnas sumando valores enteros de distintas columnas, por ejemplo:</p>
+  <p><code>Injuries=InjuriesDirect+InjuriesIndirect</code></p>
+ Prueba y analiza la siguente consulta:
+  <pre tabindex="0" class="has-inner-focus"><code class="lang-kusto" data-author-content="StormEvents
+| project US_State=State, EventType, Injuries=InjuriesDirect+InjuriesIndirect, Damage=DamageCrops+DamageProperty
+| take 10
+"><span>StormEvents
+| <span class="hljs-title">project</span> US_State=State, EventType, Injuries=InjuriesDirect+InjuriesIndirect, Damage=DamageCrops+DamageProperty
+| <span class="hljs-title">take</span> <span class="hljs-number">10</span>
+</span></code></pre>
+  También puede utilizar el operador <code>project-away</code> para eliminar columnas:
+  <pre tabindex="0" class="has-inner-focus"><code class="lang-kusto" data-author-content="StormEvents
+| project-away EpisodeId, EventId
+| take 10
+"><span>StormEvents
+| <span class="hljs-title">project-away</span> EpisodeId, EventId
+| <span class="hljs-title">take</span> <span class="hljs-number">10</span>
+</span></code></pre>
+  <h4><code>Where</code></h4>
+  <p></p>
+  <h4><code>Sort</code></h4>
+  <p></p>
  </details>
 
-
- <details>
-  <summary><h2>Filtrar datos con Query/h2></summary>
-    </details>
