@@ -19,7 +19,7 @@ _Cómo cargar y consultar información en bases de datos_ :smiley_cat:
 <tbody>
 <tr>
 <td>Subscription</td>
-<td>Suscripción de Concierge</td>
+<td>Azure for Students</td>
 </tr>
 <tr>
 <td>Grupo de recursos</td>
