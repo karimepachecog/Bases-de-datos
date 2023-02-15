@@ -105,3 +105,8 @@ _Cómo cargar y consultar información en bases de datos_ :smiley_cat:
 <p>Ya está listo para ejecutar consultas en la tabla <em>StormEvents</em>. </p>
 
  </details>
+
+
+ <details>
+  <summary><h2>Filtrar datos con Query/h2></summary>
+    </details>
