@@ -82,7 +82,30 @@ _Cómo cargar y consultar información en bases de datos_ :smiley_cat:
   </details>
  
  <details id=2>
-  <summary><h2>Consultar datos con Query</h2></summary>
-  
-  _SQL_
+  <summary><h2>Consultar datos con Kutso</h2></summary>
+<h2 id="connect-to-the-data">Conexión a los datos</h2>
+<p>Usará la interfaz web de Azure Data Explorer para conectarse a los datos. Pero también puede usar el Lenguaje de consulta Kusto mismo en Log Analytics, Azure Sentinel y otros servicios. Solo tendrá que conectarse una vez y seguirá usando esta conexión de datos para todas las consultas de las unidades siguientes.</p>
+<ol>
+<li><p>Use la cuenta de Azure para iniciar sesión en la <a href="https://dataexplorer.azure.com/" data-linktype="external">interfaz de usuario web de Azure Data Explorer</a>.</p>
+</li>
+<li><p>En el panel izquierdo, seleccione <strong>Consulta</strong>.</p>
+</li>
+<li><p>Seleccione el botón <strong>Agregar clúster</strong> en la parte superior de la pestaña.</p>
+</li>
+<li><p>En el cuadro de diálogo, en <strong>URI de conexión</strong>, escriba <em>help</em>.</p>
+</li>
+<li><p>Seleccione <strong>Agregar</strong>.</p></li>
+</ol>
+<p>Ya está conectado al clúster help.</p>
+<h3 id="select-the-database">Seleccione la base de datos</h3>
+<p>Las consultas siempre se ejecutan en el contexto de una base de datos, por lo que debe conectarse a una específica.</p>
+<ol>
+<li><p>Expanda el clúster help en el panel izquierdo.</p>
+</li>
+<li><p>Seleccione la base de datos <strong>Samples</strong> para proporcionar a las consultas el contexto correcto.</p></li>
+<li><p>Si expande la base de datos <strong>Samples</strong>, <strong>Tables</strong> y la carpeta <strong>Storm_Events</strong>, verá una lista de tablas debajo de la base de datos; usaremos la tabla <em>StormEvents</em>.</p>
+</li>
+</ol>
+<p>Ya está listo para ejecutar consultas en la tabla <em>StormEvents</em>. </p>
+
  </details>
