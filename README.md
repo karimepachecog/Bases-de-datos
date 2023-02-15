@@ -142,8 +142,55 @@ _Cómo cargar y consultar información en bases de datos_ :smiley_cat:
 | <span class="hljs-title">take</span> <span class="hljs-number">10</span>
 </span></code></pre>
   <h4><code>Where</code></h4>
-  <p></p>
+  <p>Filtra los resultados que satisfacen una condición determinada.Estas condiones las podemos establecer con operadores numéricos como <i>mayorque</i><code>></code>, valores de cadena como <code>"FLORIDA"</code>, mediante el operador <code>has</code> o con valores datatipe, (que contiene el formato)<code>where</code><em>hora</em><code>between</code><code>(datetime(</code><em>valor</em><code>)..datetime(</code><em>valor</em><code>))</code></p>
+  Prueba y analiza la siguiente consulta:
+  <pre tabindex="0" class="has-inner-focus"><code class="lang-kusto" data-author-content="StormEvents
+| where StartTime between (datetime(2007-01-01)..datetime(2007-06-01))
+| where DamageProperty > 0
+| where State == &quot;FLORIDA&quot;
+| project StartTime, EventType, DamageProperty
+| take 50
+"><span>StormEvents
+| <span class="hljs-title">where</span> StartTime <span class="hljs-keyword">between</span> (<span class="hljs-number">datetime(2007-01-01)</span>..<span class="hljs-number">datetime(2007-06-01)</span>)
+| <span class="hljs-title">where</span> DamageProperty &gt; <span class="hljs-number">0</span>
+| <span class="hljs-title">where</span> State == <span class="hljs-string">"FLORIDA"</span>
+| <span class="hljs-title">project</span> StartTime, EventType, DamageProperty
+| <span class="hljs-title">take</span> <span class="hljs-number">50</span>
+</span></code></pre>
+  
   <h4><code>Sort</code></h4>
-  <p></p>
+  
+  <p>El operador sort organiza los datos para que sean más faciles de entender, veamos su aplicación de manera ascendete y descendente</p>
+  <pre tabindex="0" class="has-inner-focus"><code class="lang-kusto" data-author-content="StormEvents
+| where DamageProperty > 0
+| project State, EventType, DamageProperty
+| sort by DamageProperty desc
+"><span>StormEvents
+| <span class="hljs-title">where</span> DamageProperty &gt; <span class="hljs-number">0</span>
+| <span class="hljs-title">project</span> State, EventType, DamageProperty
+| <span class="hljs-title">sort</span> <span class="hljs-keyword">by</span> DamageProperty <span class="hljs-keyword">desc</span>
+</span></code></pre>
+  
+  <pre tabindex="0" class="has-inner-focus"><code class="lang-kusto" data-author-content="StormEvents
+| where DamageProperty > 0
+| project State, EventType, DamageProperty
+| sort by State asc, DamageProperty
+"><span>StormEvents
+| <span class="hljs-title">where</span> DamageProperty &gt; <span class="hljs-number">0</span>
+| <span class="hljs-title">project</span> State, EventType, DamageProperty
+| <span class="hljs-title">sort</span> <span class="hljs-keyword">by</span> State <span class="hljs-keyword">asc</span>, DamageProperty
+</span></code></pre>
+  
+ <p>Dentro de sort, también existe el operador <code>top</code> que muestra un número específico de resultados principales. </p>
+  
+  <pre tabindex="0" class="has-inner-focus"><code class="lang-kusto" data-author-content="StormEvents
+| where State == &quot;FLORIDA&quot;
+| top 10 by DamageProperty
+| project State, EventType, DamageProperty
+"><span>StormEvents
+| <span class="hljs-title">where</span> State == <span class="hljs-string">"FLORIDA"</span>
+| <span class="hljs-title">top</span> <span class="hljs-number">10</span> <span class="hljs-keyword">by</span> DamageProperty
+| <span class="hljs-title">project</span> State, EventType, DamageProperty
+</span></code></pre>
  </details>
 
